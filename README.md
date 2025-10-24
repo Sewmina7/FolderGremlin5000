@@ -56,28 +56,38 @@ You can define flexible commands using these placeholders in `command.txt`:
 | `{output}` | Content of `output.txt` (e.g. file extension or folder name) |
 
 **Example:**
-
 -blend {File} -render {FileName}.{output}
+
+yaml
+Copy code
 
 ---
 
 ## 🪄 Example Setup (Blender Render Queue)
 
-**1️⃣** Edit your `file.txt`
-
+**1️⃣** Edit your `file.txt`  
 C:/Program Files/Blender Foundation/Blender 4.0/blender.exe
 
-**2️⃣** Edit your `command.txt`
+markdown
+Copy code
 
+**2️⃣** Edit your `command.txt`  
 -b {File} -o //output/{FileName}_{output} -F PNG -a
 
-**3️⃣** Edit your `queue_dir.txt`
+markdown
+Copy code
 
+**3️⃣** Edit your `queue_dir.txt`  
 C:/RenderQueue/
 
-**4️⃣** Edit your `output.txt`
+markdown
+Copy code
 
+**4️⃣** Edit your `output.txt`  
 png
+
+yaml
+Copy code
 
 **5️⃣** Drop your `.blend` files into `C:/RenderQueue/`  
 Each file will be automatically rendered one after another.
@@ -96,41 +106,33 @@ Each file will be automatically rendered one after another.
    git clone https://github.com/Sewmina7/FolderGremlin5000.git
    cd FolderGremlin5000
    dotnet build
+Run the program:
 
-2. Run the program:
-
+bash
+Copy code
 FolderGremlin5000.exe
+The console will display:
 
-
-3. The console will display:
-
+javascript
+Copy code
 Starting file watcher...
 Watching folder: C:/RenderQueue/
+Drop files into your queue directory — Folder Gremlin 5000 will handle the rest.
 
-
-4. Drop files into your queue directory — Folder Gremlin 5000 will handle the rest.
-
-
-
-
----
-
-🧾 Logging
-
+## 🧾 Logging
 All events are recorded in log.txt:
 
+csharp
+Copy code
 [12:41:27.843] Started new session
 [12:41:28.105] Found 3 files in queue
 [12:41:28.260] Executing Command : -b scene.blend -F PNG
 [12:55:04.100] Task finished! Deleted file scene.blend
-
 This makes debugging and monitoring effortless.
-
 
 ---
 
-🧱 Architecture
-
+## 🧱 Architecture
 Language: C# (.NET 6)
 
 Main Components:
@@ -147,11 +149,7 @@ Timestamped logging system
 
 
 
-
----
-
-💡 Tips & Notes
-
+## 💡 Tips & Notes
 If configuration files are missing, they will be created automatically.
 
 Make sure your executable path and command arguments are valid.
@@ -162,10 +160,7 @@ Edit configuration files anytime; changes apply on next iteration.
 
 
 
----
-
-🚧 Future Roadmap
-
+## 🚧 Future Roadmap
 ✅ Graceful error handling and validation
 
 🧰 Asynchronous file watcher
@@ -174,17 +169,11 @@ Edit configuration files anytime; changes apply on next iteration.
 
 🔄 Post-processing file organization
 
-
-
 ---
 
-🧑‍💻 Author
-
+### 🧑‍💻 Author
 Sewmina Dilshan
 Freelance software & game developer
 🌐 LinkedIn • GitHub
-
-
----
 
 🦾 “Set it once. Let the gremlin handle the rest.”
